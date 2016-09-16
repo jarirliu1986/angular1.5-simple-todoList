@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="todoCtrl">
+		<h2>To-do List</h2><hr/>
+		<div>{{remaining()}} of {{total}} remaining  <button ng-click="archive()">archive</button></div>
+		<ul ng-repeat="todo in todos">
+			<li class="done-{{todo.done}}">
+				<input type="checkbox" ng-model="todo.done">
+				{{todo.name}}
+			</li>
+		</ul>
+		<form action="#" ng-submit="addTodo()">
+			<input type="text" ng-model="newTodo" placeholder="input new task">
+			<input type="submit" value="add">
+		</form>
+	</div>
+</body>
+</html>
