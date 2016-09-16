@@ -14,7 +14,7 @@ myApp.controller('todoCtrl', ['$scope', function ($scope) {
 	$scope.remaining = function(){
 		var count = 0;
 		angular.forEach($scope.todos, function(todo){
-			count += todo.done? 1 : 0;
+			count += todo.done? 0 : 1;
 		});
 		return count;
 	}
